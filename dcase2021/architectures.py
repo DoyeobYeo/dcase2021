@@ -22,7 +22,7 @@ class AutoEncoder(nn.Module):
         self.activation_en4 = nn.ReLU()
 
         self.encoder5 = nn.Linear(128, 8)
-        self.bt_en5 = nn.BatchNorm1d(128)
+        self.bt_en5 = nn.BatchNorm1d(8)
         self.activation_en5 = nn.ReLU()
 
         self.decoder1 = nn.Linear(8, 128)
@@ -40,6 +40,10 @@ class AutoEncoder(nn.Module):
         self.decoder4 = nn.Linear(128, 128)
         self.bt_de4 = nn.BatchNorm1d(128)
         self.activation_de4 = nn.ReLU()
+
+        self.decoder5 = nn.Linear(128, input_dim)
+        self.bt_de5 = nn.BatchNorm1d(input_dim)
+        self.activation_de5 = nn.ReLU()
 
     def forward(self, x):
         x = x.view(x.size(0), -1)
@@ -77,6 +81,10 @@ class AutoEncoder(nn.Module):
 
         de_x = self.decoder4(de_x)
         de_x = self.bt_de4(de_x)
-        out = self.activation_de4(de_x)
+        de_x = self.activation_de4(de_x)
+
+        de_x = self.decoder5(de_x)
+        de_x = self.bt_de5(de_x)
+        out = self.activation_de5(de_x)
 
         return out

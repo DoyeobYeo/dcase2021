@@ -8,35 +8,34 @@ import librosa
 
 from tqdm import tqdm
 from torch.utils.data import Dataset as BaseDataset
+from torch.utils.data import DataLoader
+
 try:
     from sklearn.externals import joblib
 except:
     import joblib
 
 import dcase2021.libs as libs
+from dcase2021.libs import file_list_generator
 
 
 class Dataset(BaseDataset):
     def __init__(
             self,
-            file_list,
-            n_mels=64,
-            n_frames=5,
-            n_hop_frames=1,
-            n_fft=1024,
-            hop_length=512,
-            power=2.0
+            info_list, param
     ):
-        self.file_list = file_list
-        self.n_mels = n_mels
-        self.n_frames = n_frames
-        self.n_hop_frames = n_hop_frames
-        self.n_fft = n_fft
-        self.hop_length = hop_length
-        self.power = power
+        self.info_list = info_list
+
+        self.n_mels = param["feature"]["n_mels"]
+        self.n_frames = param["feature"]["n_frames"]
+        self.n_hop_frames = param["feature"]["n_hop_frames"]
+        self.n_fft = param["feature"]["n_fft"]
+        self.hop_length = param["feature"]["hop_length"]
+        self.power = param["feature"]["power"]
 
     def __getitem__(self, idx):
-        file_name = self.file_list[idx]
+        file_name = self.info_list[idx][0]
+        slice_num = int(self.info_list[idx][1])
         dims = self.n_mels * self.n_frames
 
         # generate melspectrogram using librosa
@@ -63,48 +62,65 @@ class Dataset(BaseDataset):
             vectors[:, self.n_mels * t: self.n_mels * (t + 1)] = log_mel_spectrogram[:, t: t + n_vectors].T
 
         vectors = vectors[::self.n_hop_frames, :]
-        return vectors
+        try:
+            vectors = vectors[slice_num]
+        except:
+            print(file_name, slice_num, len(y))
+        return vectors.astype('float32')
 
     def __len__(self):
-        return len(self.file_list)
+        return len(self.info_list)
 
 
-if __name__ == "__main__":
-    from dcase2021.libs import yaml_load
-    from dcase2021.libs import select_dirs
-    from dcase2021.libs import file_list_generator
-    from torch.utils.data import DataLoader
+def make_dataloader(target_dir, param, batch_size, mode=True):
+    train_info_list = list()
+    files, y_true = file_list_generator(target_dir=target_dir,
+                                        section_name="*",
+                                        dir_name="train",
+                                        mode=mode)
 
-    # "development": mode == True
-    # "evaluation": mode == False
-    mode = True
-    param = yaml_load("../baseline.yaml")
-
-    dirs = select_dirs(param=param, mode=mode)
-    # print(param)
-
-    # loop of the base directory
-    file_list = list()
-    for idx, target_dir in enumerate(dirs):
-        files, y_true = file_list_generator(target_dir=target_dir,
-                                            section_name="*",
-                                            dir_name="train",
-                                            mode=mode)
-        file_list.extend(files)
+    for file_name in files:
+        y, sr = libs.file_load(file_name, mono=True)
+        feature_mel = 1 + len(y) // param["feature"]["hop_length"] - param["feature"]["n_frames"] + 1
+        feature_mel = feature_mel // param["feature"]["n_hop_frames"]
+        slices_idx_list = list(np.arange(feature_mel))
+        all_list = [[file_name], slices_idx_list]
+        comb = [list(x) for x in np.array(np.meshgrid(*all_list)).T.reshape(-1, len(all_list))]
+        train_info_list.extend(comb)
 
     train_dataset = Dataset(
-        file_list
+        train_info_list,
+        param
     )
     train_dataloader = DataLoader(
         train_dataset,
-        batch_size=1,
-        num_workers=1,
-        shuffle=True,
-        pin_memory=True
+        batch_size=batch_size, num_workers=20,
+        shuffle=True, pin_memory=True
     )
-    for k in range(5):
-        train_tensor = next(iter(train_dataloader))
-        print(train_tensor.shape)
-        tmp = train_tensor.view(-1)
-        print(tmp.shape)
+    return train_dataloader
 
+
+if __name__ == "__main__":
+    # test script for pytorch dataloader
+    from dcase2021.libs import yaml_load
+    from dcase2021.libs import select_dirs
+
+
+    # "development": mode == True
+    # "evaluation": mode == False
+    _mode = True
+    _param = yaml_load("../baseline.yaml")
+    _dirs = select_dirs(param=_param, mode=_mode)
+
+    # loop of the base directory
+    for idx, target_dir in enumerate(_dirs):
+        # make datasets and dataloaders for each problem
+
+        train_dataloader = make_dataloader(
+            target_dir=target_dir,
+            param=_param,
+            mode=_mode, batch_size=16
+        )
+        for k in range(5):
+            train_tensor = next(iter(train_dataloader))
+            print(train_tensor.shape)
