@@ -40,15 +40,27 @@ if __name__ == '__main__':
     _dirs = select_dirs(param=_param, mode=_mode)
     _epoch = _param["fit"]["epochs"]
     _batch_size = _param["fit"]["batch_size"]
+    _validation_split = _param["fit"]["validation_split"]
+
+    # parameters for DataLoader
+    _num_workers = 8
+    _prefetch_factor = 4
+    _pin_memory = True
+    _persistent_workers = True
 
     # loop of the base directory
     for idx, target_dir in enumerate(_dirs):
         # make datasets and dataloaders for each problem
-        train_dataloader = make_dataloader(
+        train_dataloader, val_dataloader = make_dataloader(
             target_dir=target_dir,
             param=_param,
             mode=_mode,
-            batch_size=_batch_size
+            batch_size=_batch_size,
+            validation_split=_validation_split,
+            num_workers=_num_workers,
+            prefetch_factor=_prefetch_factor,
+            pin_memory=_pin_memory,
+            persistent_workers=_persistent_workers
         )
 
         for epoch in range(1, _epoch + 1):

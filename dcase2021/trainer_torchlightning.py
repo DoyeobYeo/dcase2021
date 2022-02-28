@@ -71,15 +71,27 @@ if __name__ == '__main__':
     _epoch = _param["fit"]["epochs"]
     _batch_size = _param["fit"]["batch_size"]
     _lr = _param["fit"]["lr"]
+    _validation_split = _param["fit"]["validation_split"]
+
+    # parameters for DataLoader
+    _num_workers = 12
+    _prefetch_factor = 1
+    _pin_memory = True
+    _persistent_workers = True
 
     # loop of the base directory
     for idx, target_dir in enumerate(_dirs):
         # make datasets and dataloaders for each problem
-        train_dataloader = make_dataloader(
+        train_dataloader, val_dataloader = make_dataloader(
             target_dir=target_dir,
             param=_param,
             mode=_mode,
-            batch_size=_batch_size
+            batch_size=_batch_size,
+            validation_split=_validation_split,
+            num_workers=_num_workers,
+            prefetch_factor=_prefetch_factor,
+            pin_memory=_pin_memory,
+            persistent_workers=_persistent_workers
         )
 
         network = AutoEncoder_tl(
@@ -89,11 +101,12 @@ if __name__ == '__main__':
 
         trainer = pl.Trainer(
             # auto_scale_batch_size='power',
-            gpus="0",
+            gpus=1,
+            # strategy="deepspeed_stage_3_offload",
             # accelerator='ddp',
             # deterministic=True,
             max_epochs=_epoch,
             # precision=16
         )
 
-        trainer.fit(network, train_dataloader)
+        trainer.fit(network, train_dataloader, val_dataloader)

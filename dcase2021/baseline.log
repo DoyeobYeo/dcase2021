@@ -443,3 +443,198 @@ ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_d
 ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_00_source_train_normal_0419_A2Spd34VMic1.wav
 INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
 INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_00_source_train_normal_0812_E2Spd34VMic1.wav
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_01_source_train_normal_0187_A1Spd28VMic1.wav
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_00_source_train_normal_0507_E1Spd28VMic1.wav
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_00_source_train_normal_0203_A1Spd28VMic1.wav
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_00_source_train_normal_0055_A1Spd28VMic1.wav
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_00_source_train_normal_0016_A1Spd28VMic1.wav
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_00_source_train_normal_0632_E1Spd28VMic1.wav
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_01_source_train_normal_0426_A1Spd40VMic1.wav
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:3 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:4 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:5 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:5 with 1 nodes.
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:3 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:4 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:5 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:5 with 1 nodes.
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_00_source_train_normal_0372_A2Spd34VMic1.wav
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 1 nodes.
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:5 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:5 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:5 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:5 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:6 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:6 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:6 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:7 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:6 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:7 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:7 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:7 with 2 nodes.
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_02_source_train_normal_0573_A2Spd34VMic1.wav
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_01_source_train_normal_0444_A1Spd40VMic1.wav
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:3 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:4 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:5 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:5 with 1 nodes.
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:3 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:4 with 1 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:5 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:5 with 1 nodes.
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_00_source_train_normal_0065_A1Spd28VMic1.wav
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_00_source_train_normal_0696_E1Spd28VMic1.wav
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_00_source_train_normal_0167_A1Spd28VMic1.wav
+ERROR: :file_broken or not exists!! : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar/train/section_02_source_train_normal_0239_A1Spd34VMic1.wav
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009
+INFO: :load_directory <- development
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyCar_*
+INFO: :#files : 3009
+INFO: :target_dir : /media/yeody/DATA_2TB/dcase2021/data/dev_data/ToyTrain_*
+INFO: :#files : 3009

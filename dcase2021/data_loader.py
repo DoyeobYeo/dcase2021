@@ -1,6 +1,7 @@
 import os
 import sys
 import gc
+import random
 
 import numpy as np
 import scipy.stats
@@ -79,7 +80,11 @@ class Dataset(BaseDataset):
         return len(self.info_list)
 
 
-def make_dataloader(target_dir, param, batch_size, mode=True):
+def make_dataloader(
+        target_dir, param, batch_size,
+        num_workers, prefetch_factor, pin_memory, persistent_workers,
+        mode=True, validation_split=0.2
+):
     '''
     :param target_dir: (string) 각 기기에 대한 데이터들이 위치한 가장 상위 디텍토리 (ex. './dev_data/fan')
     :param param: (dictionary) yaml 파일에 저장된 여러 파라미터를 로드한 값
@@ -87,7 +92,7 @@ def make_dataloader(target_dir, param, batch_size, mode=True):
     :param mode: (boolean) development 모드일 때 True, evaluation 모드일 때 False
     :return: Pytorch DataLoader
     '''
-    train_info_list = list()
+    dataset_info_list = list()
     files, y_true = file_list_generator(target_dir=target_dir,
                                         section_name="*",
                                         dir_name="train",
@@ -100,19 +105,43 @@ def make_dataloader(target_dir, param, batch_size, mode=True):
         slices_idx_list = list(np.arange(feature_mel))
         all_list = [[file_name], slices_idx_list]
         comb = [list(x) for x in np.array(np.meshgrid(*all_list)).T.reshape(-1, len(all_list))]
-        train_info_list.extend(comb)
+        dataset_info_list.extend(comb)
+
+    val_idx = int(len(dataset_info_list) * validation_split)
+    random.shuffle(dataset_info_list)
+    val_list = dataset_info_list[:val_idx]
+    train_list = dataset_info_list[val_idx:]
 
     train_dataset = Dataset(
-        train_info_list,
+        train_list,
         param
     )
     train_dataloader = DataLoader(
         train_dataset,
-        batch_size=batch_size, num_workers=20,
-        shuffle=True, pin_memory=True,
-        persistent_workers=True
+        batch_size=batch_size,
+        num_workers=num_workers,
+        prefetch_factor=prefetch_factor,
+        shuffle=True,
+        pin_memory=pin_memory,
+        persistent_workers=persistent_workers
     )
-    return train_dataloader
+
+    val_dataset = Dataset(
+        val_list,
+        param
+    )
+
+    val_dataloader = DataLoader(
+        val_dataset,
+        batch_size=batch_size,
+        num_workers=num_workers,
+        prefetch_factor=prefetch_factor,
+        shuffle=False,
+        pin_memory=pin_memory,
+        persistent_workers=persistent_workers
+    )
+
+    return train_dataloader, val_dataloader
 
 
 if __name__ == "__main__":
