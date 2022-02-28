@@ -10,10 +10,7 @@ from dcase2021.libs import select_dirs
 from dcase2021.data_loader import make_dataloader
 
 
-device = 'cuda'
-
-
-def train_one_epoch(net, train_dataloader, num_epoch):
+def train_one_epoch(net, train_dataloader, num_epoch, device):
     net.train()
 
     for inputs in tqdm(train_dataloader, desc="Epoch: "+str(num_epoch)):
@@ -27,8 +24,11 @@ def train_one_epoch(net, train_dataloader, num_epoch):
 
 
 if __name__ == '__main__':
+    _use_cuda = torch.cuda.is_available()
+    _device = torch.device("cuda" if _use_cuda else "cpu")
+
     net = AutoEncoder(input_dim=640)
-    net.to(device)
+    net.to(_device)
 
     criterion = nn.MSELoss()
     optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
@@ -52,10 +52,7 @@ if __name__ == '__main__':
         )
 
         for epoch in range(1, _epoch + 1):
-            train_one_epoch(net, train_dataloader, num_epoch=epoch)
-
-
-
+            train_one_epoch(net, train_dataloader, num_epoch=epoch, device=_device)
 
 
 

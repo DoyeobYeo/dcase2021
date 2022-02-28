@@ -24,6 +24,13 @@ class Dataset(BaseDataset):
             self,
             info_list, param
     ):
+        '''
+        Make a Torch Dataset
+        :param info_list: List of [wav filename, index of slice]
+        하나의 wav 파일을 읽어서 mel spectrogram 변환을 하게 되면, 2D array가 생성된다.
+        mel spectrogram에서 time 축의 특정 index의 spectrum 정보를 반환한다.
+        :param param: None
+        '''
         self.info_list = info_list
 
         self.n_mels = param["feature"]["n_mels"]
@@ -73,6 +80,13 @@ class Dataset(BaseDataset):
 
 
 def make_dataloader(target_dir, param, batch_size, mode=True):
+    '''
+    :param target_dir: (string) 각 기기에 대한 데이터들이 위치한 가장 상위 디텍토리 (ex. './dev_data/fan')
+    :param param: (dictionary) yaml 파일에 저장된 여러 파라미터를 로드한 값
+    :param batch_size: (integer) 배치 사이즈
+    :param mode: (boolean) development 모드일 때 True, evaluation 모드일 때 False
+    :return: Pytorch DataLoader
+    '''
     train_info_list = list()
     files, y_true = file_list_generator(target_dir=target_dir,
                                         section_name="*",
@@ -95,7 +109,8 @@ def make_dataloader(target_dir, param, batch_size, mode=True):
     train_dataloader = DataLoader(
         train_dataset,
         batch_size=batch_size, num_workers=20,
-        shuffle=True, pin_memory=True
+        shuffle=True, pin_memory=True,
+        persistent_workers=True
     )
     return train_dataloader
 
