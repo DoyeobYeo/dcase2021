@@ -1,7 +1,7 @@
-dev_directory: /media/yeody/DATA_2TB/dcase2021/data/dev_data
-eval_directory: /media/yeody/DATA_2TB/dcase2021/data/eval_data
-model_directory: /media/yeody/DATA_2TB/dcase2021/model
-result_directory: /media/yeody/DATA_2TB/dcase2021/result
+dev_directory: data/dev_data
+eval_directory: data/eval_data
+model_directory: model
+result_directory: result
 result_file: result.csv
 
 max_fpr: 0.1

@@ -1,3 +1,5 @@
+import os
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -24,6 +26,8 @@ def train_one_epoch(net, train_dataloader, num_epoch, device):
 
 
 if __name__ == '__main__':
+    _base_dir = '/media/yeody/DATA_2TB/dcase2021'
+
     _use_cuda = torch.cuda.is_available()
     _device = torch.device("cuda" if _use_cuda else "cpu")
 
@@ -31,22 +35,26 @@ if __name__ == '__main__':
     net.to(_device)
 
     criterion = nn.MSELoss()
-    optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
     # "development": mode == True
     # "evaluation": mode == False
     _mode = True
-    _param = yaml_load("../baseline.yaml")
-    _dirs = select_dirs(param=_param, mode=_mode)
+    _param = yaml_load(os.path.join(_base_dir, 'baseline.yaml'))
+    _dirs = select_dirs(base_dir=_base_dir, param=_param, mode=_mode)
+
     _epoch = _param["fit"]["epochs"]
     _batch_size = _param["fit"]["batch_size"]
     _validation_split = _param["fit"]["validation_split"]
+    _lr = _param["fit"]["lr"]
 
     # parameters for DataLoader
     _num_workers = 8
     _prefetch_factor = 4
     _pin_memory = True
     _persistent_workers = True
+
+    optimizer = optim.Adam(net.parameters(), lr=_lr)
+
 
     # loop of the base directory
     for idx, target_dir in enumerate(_dirs):

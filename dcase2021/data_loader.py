@@ -89,7 +89,12 @@ def make_dataloader(
     :param target_dir: (string) 각 기기에 대한 데이터들이 위치한 가장 상위 디텍토리 (ex. './dev_data/fan')
     :param param: (dictionary) yaml 파일에 저장된 여러 파라미터를 로드한 값
     :param batch_size: (integer) 배치 사이즈
+    :param num_workers:
+    :param prefetch_factor:
+    :param pin_memory:
+    :param persistent_workers:
     :param mode: (boolean) development 모드일 때 True, evaluation 모드일 때 False
+    :param validation_split:
     :return: Pytorch DataLoader
     '''
     dataset_info_list = list()
@@ -149,19 +154,19 @@ if __name__ == "__main__":
     from dcase2021.libs import yaml_load
     from dcase2021.libs import select_dirs
 
+    _base_dir = '/media/yeody/DATA_2TB/dcase2021'
 
     # "development": mode == True
     # "evaluation": mode == False
     _mode = True
-    _param = yaml_load("../baseline.yaml")
-    _dirs = select_dirs(param=_param, mode=_mode)
+    _param = yaml_load(os.path.join(_base_dir, 'baseline.yaml'))
+    _dirs = select_dirs(base_dir=_base_dir, param=_param, mode=_mode)
 
     # loop of the base directory
-    for idx, target_dir in enumerate(_dirs):
+    for idx, _target_dir in enumerate(_dirs):
         # make datasets and dataloaders for each problem
-
         train_dataloader = make_dataloader(
-            target_dir=target_dir,
+            target_dir=_target_dir,
             param=_param,
             mode=_mode, batch_size=16
         )

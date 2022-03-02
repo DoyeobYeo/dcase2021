@@ -112,7 +112,7 @@ def file_to_vectors(file_name,
     return vectors
 
 
-def select_dirs(param, mode):
+def select_dirs(base_dir, param, mode):
     """
     param : dict
         baseline.yaml data
@@ -126,10 +126,10 @@ def select_dirs(param, mode):
     """
     if mode:
         logger.info("load_directory <- development")
-        query = os.path.abspath("{base}/*".format(base=param["dev_directory"]))
+        query = os.path.abspath("{base}/{dev_dir}/*".format(base=base_dir, dev_dir=param["dev_directory"]))
     else:
         logger.info("load_directory <- evaluation")
-        query = os.path.abspath("{base}/*".format(base=param["eval_directory"]))
+        query = os.path.abspath("{base}/{eval_dir}/*".format(base=base_dir, eval_dir=param["eval_directory"]))
     dirs = sorted(glob.glob(query))
     dirs = [f for f in dirs if os.path.isdir(f)]
     return dirs

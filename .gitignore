@@ -1,5 +1,5 @@
 data/
 .idea/
+dcase2021/lightning_logs/
 dcase2021/baseline.log
 data.zip
-dcase2021/lightning_logs/

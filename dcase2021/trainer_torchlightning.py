@@ -1,3 +1,5 @@
+import os
+
 import torch
 
 import pytorch_lightning as pl
@@ -66,8 +68,10 @@ if __name__ == '__main__':
     # "development": mode == True
     # "evaluation": mode == False
     _mode = True
-    _param = yaml_load("../baseline.yaml")
-    _dirs = select_dirs(param=_param, mode=_mode)
+    _base_dir = '/media/yeody/DATA_2TB/dcase2021'
+
+    _param = yaml_load(os.path.join(_base_dir, 'baseline.yaml'))
+    _dirs = select_dirs(base_dir=_base_dir, param=_param, mode=_mode)
     _epoch = _param["fit"]["epochs"]
     _batch_size = _param["fit"]["batch_size"]
     _lr = _param["fit"]["lr"]
