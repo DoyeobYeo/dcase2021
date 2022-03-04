@@ -7,10 +7,10 @@ import pytorch_lightning as pl
 
 from torchmetrics import MeanSquaredError as MSE
 
-from dcase2021.architectures import AutoEncoder
-from dcase2021.libs import yaml_load
-from dcase2021.libs import select_dirs
-from dcase2021.data_loader import make_dataloader
+from dcase2021.libs_dy.architectures import AutoEncoder
+from dcase2021.libs_dy.libs import yaml_load
+from dcase2021.libs_dy.libs import select_dirs
+from dcase2021.libs_dy.data_loader import make_dataloader
 
 
 class AutoEncoder_tl(pl.LightningModule):

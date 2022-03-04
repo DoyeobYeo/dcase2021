@@ -6,10 +6,10 @@ import torch.optim as optim
 
 from tqdm import tqdm
 
-from dcase2021.architectures import AutoEncoder
-from dcase2021.libs import yaml_load
-from dcase2021.libs import select_dirs
-from dcase2021.data_loader import make_dataloader
+from dcase2021.libs_dy.architectures import AutoEncoder
+from dcase2021.libs_dy.libs import yaml_load
+from dcase2021.libs_dy.libs import select_dirs
+from dcase2021.libs_dy.data_loader import make_dataloader
 
 
 def train_one_epoch(net, train_dataloader, num_epoch, device):
@@ -54,7 +54,6 @@ if __name__ == '__main__':
     _persistent_workers = True
 
     optimizer = optim.Adam(net.parameters(), lr=_lr)
-
 
     # loop of the base directory
     for idx, target_dir in enumerate(_dirs):

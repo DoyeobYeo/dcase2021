@@ -16,7 +16,7 @@ Standard output is logged in "baseline.log".
 """
 import logging
 
-logging.basicConfig(level=logging.DEBUG, filename="baseline.log")
+logging.basicConfig(level=logging.DEBUG, filename="../baseline.log")
 logger = logging.getLogger(' ')
 handler = logging.StreamHandler()
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -114,8 +114,10 @@ def file_to_vectors(file_name,
 
 def select_dirs(base_dir, param, mode):
     """
+    base_dir : str
     param : dict
         baseline.yaml data
+    mode : boolean
     return :
         if active type the development :
             dirs :  list [ str ]
@@ -234,19 +236,21 @@ def file_list_generator(target_dir,
 
 
 if __name__ == "__main__":
+    pass
+
     # "development": mode == True
     # "evaluation": mode == False
-    mode = True
-    param = yaml_load("../baseline.yaml")
-
-    dirs = select_dirs(param=param, mode=mode)
-    # print(param)
-
-    # loop of the base directory
-    file_list = list()
-    for idx, target_dir in enumerate(dirs):
-        files, y_true = file_list_generator(target_dir=target_dir,
-                                            section_name="*",
-                                            dir_name="train",
-                                            mode=mode)
-        file_list.extend(files)
+    # mode = True
+    # param = yaml_load("../../baseline.yaml")
+    #
+    # dirs = select_dirs(param=param, mode=mode)
+    # # print(param)
+    #
+    # # loop of the base directory
+    # file_list = list()
+    # for idx, target_dir in enumerate(dirs):
+    #     files, y_true = file_list_generator(target_dir=target_dir,
+    #                                         section_name="*",
+    #                                         dir_name="train",
+    #                                         mode=mode)
+    #     file_list.extend(files)
